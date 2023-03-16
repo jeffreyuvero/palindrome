@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    
+    <script>
+
+        function isPalindrome(stringInput){
+            var string_len = stringInput.length;
+
+            for(let i = 0; i <= string_len / 2; i++ ){
+                if(stringInput[i] !== stringInput[string_len - 1 - i]){
+                    return false; 
+                }
+            }
+
+            return true; 
+        }
+
+
+        function palindrome_checker(stringInput){
+            
+            var result = isPalindrome(stringInput); 
+
+            if(result){
+                var message = "String is a Palindrome";
+            }else{
+                var message = "String is not a Palindrome";
+            }
+            
+            document.getElementById("result").innerHTML = message; 
+        }
+    
+    </script>
+
+    <style>
+        body {
+            background-color: rgb(126, 205, 229);
+        }
+
+        .components {
+            text-align: center;
+            font-family: 'Comic Sans MS';
+        }
+
+        input {
+            position: relative;
+            cursor: text;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0 16px;
+            height: 48px;
+            width: 355px;
+            background-color: #fff;
+            border: 1px solid #d6d6e7;
+            border-radius: 10px;
+            color: rgb(35, 38, 59);
+            box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+            overflow: hidden;
+            transition: all 100ms ease-in-out;
+            focus : {
+                border-color: #3c4fe0;
+                box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
+            }
+        }   
+
+        button{
+            background: #5E5DF0;
+            border-radius: 999px;
+            box-shadow: #5E5DF0 0 10px 20px -10px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: 'Comic Sans MS';
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            opacity: 1;
+            outline: 0 solid transparent;
+            padding: 8px 18px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+        }
+
+        .result_banner {
+            height: 10em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(200, 199, 199);
+            margin: 50px 25% 0 25%; 
+            border-radius: 10px;
+            box-shadow: 5px 10px 8px #888888;
+        }
+
+        .result {
+            font-family: 'Comic Sans MS';
+
+        }
+    </style>
+
+    <div class = "components">    
+        <h1>Palindrome Checker</h1>
+        <input type="text" id = "word" />
+        <button onClick = "palindrome_checker(document.getElementById('word').value)">Check</button>
+    </div>
+
+    <div class = "result_banner">
+        <p class = "result" id = "result"></p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+
+First we will create a basic html structure.. 
+
+then we will start our Javascript coding 
+by making a script tag ..
+
+
+I will name the function "Palindrome Checker". You can name your 
+functions whatever you want as long as the name your choose is 
+the best description of what the function do.
+
+As you notice,  -->
